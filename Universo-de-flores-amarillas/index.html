@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:,">
+  <meta name="theme-color" content="#080916">
+  <meta name="description" content="Un viaje de luz y flores amarillas, hecho con cariño.">
+  <title>Un universo para ti ✦ Flores amarillas</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <main class="experience" id="experience">
+    <div class="stage">
+      <canvas id="world" aria-label="Un universo tridimensional de flores amarillas que cambia con las estaciones"></canvas>
+      <div id="reference-world" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="film-grain" aria-hidden="true"></div>
+      <div class="pulse" id="pulse" aria-hidden="true"></div>
+
+      <header class="topbar"><span class="brand"><span class="brand-mark">✦</span> UN UNIVERSO PARA TI</span><span class="date">21 DE SEPTIEMBRE</span></header>
+      <button class="sound" id="sound" type="button" aria-label="Activar música ambiental" aria-pressed="false"><span class="sound-icon">♪</span><span class="sound-label">SONIDO</span></button>
+
+      <div class="cover" id="cover">
+        <p class="overline">TE QUIERO MUCHO Y ESTO ES PARA TI</p>
+        <h1>Hay flores que<br><em>parecen estrellas.</em></h1>
+        <p class="cover-sub">Hoy hice un pequeño universo para regalarte una.</p>
+        <button class="enter" id="enter" type="button"><span>TOCA LA FLOR PARA ENTRAR</span><span class="arrow">↗</span></button>
+      </div>
+
+      <div class="story" id="story" aria-live="off">
+        <article class="message" data-scene="1" hidden><span class="chapter">I / PRIMAVERA</span><h2>Naho, hay flores que<br><em>siguen creciendo.</em></h2><p>No quería dejar pasar el Día de las Flores Amarillas sin hacerte algo con mucho cariño. Aunque hoy estemos lejos, quiero que sepas que no me he olvidado de ti.</p></article>
+        <article class="message" data-scene="2" hidden><span class="chapter">II / VERANO</span><h2>Incluso a distancia,<br><em>sigues aquí.</em></h2><p>Nuestra relación a distancia fue difícil y peleamos mucho. Sé que nos lastimamos y que tengo cosas por mejorar. Estoy intentando aprender y cambiar de verdad.</p></article>
+        <article class="message" data-scene="3" hidden><span class="chapter">III / OTOÑO</span><h2>Darnos tiempo también<br>puede ser <em>sanar.</em></h2><p>Yo entendí que este tiempo era para crecer cada uno como persona. Siento que los dos estamos haciendo ese esfuerzo y espero, de corazón, que podamos estar bien.</p></article>
+        <article class="message" data-scene="4" hidden><span class="chapter">IV / INVIERNO</span><h2>No hay prisa,<br>solo <em>cariño.</em></h2><p>Respeto tu espacio, Naho. No tienes que responder a este regalo. Solo quería recordarte que te quiero mucho y que todavía te llevo en mi corazón.</p></article>
+        <article class="message finale" data-scene="5" hidden><span class="chapter">V / LA LUZ REGRESA</span><h2>Tal vez un día<br><em>volvamos a florecer.</em></h2><p>Si seguimos sanando y mejorando, quizá en el futuro podamos construir una relación bonita, aun con la distancia. Por ahora, solo deseo que estés bien y que recibas estas flores con todo mi cariño.</p><strong>Feliz Día de las Flores Amarillas, Naho 🌻</strong><span class="explore-invite">Dejé pequeñas cartas escondidas entre los girasoles. Recorre el jardín y tócalas cuando las encuentres.</span><button class="explore-button" id="explore" type="button">EXPLORAR EL JARDÍN DE LUZ ↗</button></article>
+      </div>
+      <div class="explore-ui" id="explore-ui" hidden><span class="explore-guide">✦ <span id="explore-status">Busca los sobres entre las flores</span><small class="desktop-instructions">WASD o flechas para caminar · arrastra para mirar</small><small class="touch-instructions">Usa las flechas para caminar · arrastra para mirar</small></span><span class="letter-progress" id="letter-progress" aria-live="polite">CARTAS ENCONTRADAS 0 / 6</span><button id="leave-explore" type="button">↶ VOLVER AL INICIO</button></div>
+      <div class="move-pad" id="move-pad" hidden aria-label="Controles para caminar"><button type="button" data-move="forward" aria-label="Avanzar">↑</button><button type="button" data-move="left" aria-label="Mover a la izquierda">←</button><button type="button" data-move="back" aria-label="Retroceder">↓</button><button type="button" data-move="right" aria-label="Mover a la derecha">→</button></div>
+      <div class="letter-dialog" id="letter-dialog" hidden role="dialog" aria-modal="true" aria-labelledby="letter-title"><div class="letter-paper"><button id="close-letter" type="button" aria-label="Cerrar carta">×</button><span id="letter-number">UNA CARTA PARA TI</span><h2 id="letter-title">Naho</h2><p id="letter-text"></p><span class="letter-signature">Con cariño ♡</span></div></div>
+      <div class="orientation-tip" id="orientation-tip" hidden role="status"><span>Para recorrer mejor el jardín, gira tu celular o iPad en horizontal.</span><button id="dismiss-orientation" type="button" aria-label="Cerrar sugerencia">×</button></div>
+
+      <div class="bottom-ui"><span id="stage-name">EL COMIENZO</span><div class="timeline" aria-hidden="true"><i id="timeline-fill"></i></div><span id="stage-number">00 / 05</span></div>
+      <div class="scroll-hint" id="scroll-hint">DESLIZA PARA VIAJAR <span>↓</span></div>
+      <div class="fallback" id="fallback" hidden>No se pudo iniciar la animación en este navegador.</div>
+    </div>
+  </main>
+  <script src="textures.js"></script>
+  <script src="webgl.js"></script>
+  <script src="fallback2d.js"></script>
+  <script src="main.js"></script>
+  <script type="module" src="reference-world.js"></script>
+</body>
+</html>

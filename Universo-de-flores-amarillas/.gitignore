@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vercel/
+.DS_Store
+Thumbs.db
+
+# Capturas locales usadas durante las pruebas visuales
+garden-*.png
+explore-*.png
+heart-preview.png
+

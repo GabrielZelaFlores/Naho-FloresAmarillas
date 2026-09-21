@@ -1,0 +1,24 @@
+﻿UN UNIVERSO PARA TI · FLORES AMARILLAS
+
+La portada conserva la escena original. Durante los mensajes aparece la escena 3D de la referencia proporcionada: pasto, girasoles generados con geometría, montañas verdes alrededor del jardín, una laguna con puente, senderos, una pequeña casa iluminada y un corazón que vuela sobre el campo. Los mensajes tienen un fondo translúcido para facilitar la lectura. Three.js se incluye en node_modules/three para que el proyecto no dependa de un CDN.
+
+Para ejecutarlo localmente, abre una terminal en esta carpeta y usa:
+npm install
+npm run dev
+
+Luego abre http://127.0.0.1:8765/ en Chrome o Edge. Se necesita un servidor local porque el navegador carga reference-world.js como módulo.
+
+Para preparar la versión que publicará Vercel, usa:
+npm run build
+
+La carpeta dist se genera automáticamente. No subas node_modules ni dist a GitHub. Lee PUBLICAR.md para encontrar los pasos completos de GitHub y Vercel.
+
+Controles:
+- Toca la flor o el botón de entrada.
+- Desliza para recorrer los mensajes.
+- Al final, entra al jardín. Usa WASD o las flechas para caminar y arrastra para mirar alrededor.
+- En celular o iPad, usa las flechas táctiles para caminar y arrastra sobre el paisaje para mirar. Se recomienda poner el dispositivo en horizontal.
+- Toca los sobres luminosos para abrir las cartas ocultas. En computadora también puedes pulsar E cuando estés cerca de una carta.
+- Al encontrar las seis cartas, arrastra para girar alrededor del jardín y usa la rueda o dos dedos para acercar y alejar.
+- Usa «VOLVER AL INICIO» para regresar a la portada.
+- La música ambiental es opcional y se activa con ♪.
